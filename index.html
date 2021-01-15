@@ -1,9 +1,11 @@
-
+<html>
 <!--- DO NOT DELETE ---->
 <link type="text/css" rel="stylesheet" href="style.css" />
 <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
 <!--- DO NOT DELETE ---->
 
+
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
 
 <body>
 <div class="sidebar">
@@ -49,11 +51,80 @@
     <h1 id="js">Intro to JavaScript: Drawing & Animation</h1>
   <p>This was the first coding based module I worked on in the semester. I found the majority of this to be review since the syntax and concepts were identical to what I learned in ICS3U with C++. The one thing I newly learned was object oriented programming, which I didn't know was a thing yet. I don't really see a use for objects in our level of coding however I see the potential it will have for projects in the years to come, so to be familiar with it now will be beneficial. Apart from that, the code was being presented with Processing JS, a library to make visualizations which helped a lot in demonstrating the code. I would assume if this was my first time ever coding, the shapes and animations made would've helped a lot on seeing the code of what it presents and not simply being a bunch of text that makes commands. This will help me as a student in the further since it these skills will carry on (and already has) in terms of what I am developping in front-end projects. </p>
   <h3>Screenshot of my Fish Tank project, source code in my Github</h3>
-  <img src="https://i.imgur.com/kRr2LHk.png"></img>
-  <h1 id="html">Intro to HTML/CSS: Making webpages</h1>
-  
+   <canvas id="fishtank"></canvas>
+  <h1 id="html">Intro eto HTML/CSS: Making webpages</h1>
+         
+    <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(500, 500); 
+        frameRate(30);
+        
+        // ProgramCodeGoesHere
+background(89, 216, 255);
+
+var bodyLength = 118;
+var bodyHeight = 74;
+var bodyColor = color(162, 0, 255);
+
+noStroke();
+
+var bubbles = function(posX, posY)
+{
+    fill(78, 187, 204);
+    ellipse(posX, posY, 30, 30);
+};
+
+// Repeating the bubbles every time
+bubbles(random(0,500),random(0,500));
+bubbles(random(0,500),random(0,500));
+bubbles(random(0,500),random(0,500));
+bubbles(random(0,500),random(0,500));
+bubbles(random(0,500),random(0,500));
+bubbles(random(0,500),random(0,500));
+bubbles(random(0,500),random(0,500));
+
+// Fish Function
+var fish = function(posX, posY, eyeSize){
+    fill(bodyColor);
+    // body
+    ellipse(posX, posY, bodyLength, bodyHeight);
+    // tail
+    var tailWidth = bodyLength/4;
+    var tailHeight = bodyHeight/2;
+    triangle(posX-bodyLength/2, posY,
+         posX-bodyLength/2-tailWidth, posY-tailHeight,
+         posX-bodyLength/2-tailWidth, posY+tailHeight);
+    // eye
+    fill(random(0,255), random(0,255), random(0,255));
+    ellipse(posX+bodyLength/4, posY, eyeSize, eyeSize);
+};
+
+// Every time you refresh the colour is random
+fish(143, 256,random(1,30));
+fish(302, 181,random(1,30));
+fish(143, 110,random(1,30));
+fish(300, 51,random(1,30));
+
+// Clicking adds more random fish
+mouseClicked = function() {
+ fish(random(0,500), random(0,500),random(1,30));
+};
+
+fill(15, 13, 13);
+textSize(30);
+text("Click to add more fish", 98, 397);
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("fishtank"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
 </div>
 
 
 
 </body>
+
+</html>
