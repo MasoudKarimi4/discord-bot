@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   width: 200px;
-  background: linear-gradient(0deg, #F0F0F0, white, #F0F0F0 );
+  background: linear-gradient(0deg, #F0F0F0, white, #F0F0F0	);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -19,9 +19,6 @@ body {
   padding: 16px;
   text-decoration: none;
 }
- 
-
-
 .sidebar a:hover {
   background-color: #555;
   color: white;
@@ -43,6 +40,12 @@ p {
   font-size: 23px;
   font-family: times-new-roman
 }
+ul {
+    font-size: 23px;
+  font-family: times-new-roman
+}
+}
 #webdev{
   width:80%
 }
+
