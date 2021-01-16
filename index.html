@@ -118,7 +118,382 @@ text("Click to add more fish", 98, 397);
 
     // Get the canvas that Processing-js will use
     var canvas = document.getElementById("fishtank"); 
-    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    // Pass the function sketchProc (defined in myCode.js)<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+
+<body>
+  <div class="sidebar">
+    <a href="#intro">Home</a>
+    <a href="#csp1">Computer Science Principles: Programming</a>
+    <a href="#csp2">Computer Science Principles: Digital Information</a>
+    <a href="#js">Intro to JS</a>
+    <a href="#html">Intro to HTML</a>
+    <a href="#sql">Intro to SQL</a>
+    <a href="#games">Games & Visualizations</a>
+    <a href="#noc">Natural Simulations</a>
+    <a href="#dom">Making Webpages Interactive</a>
+    <a href="#jquery">Intro to jQuery</a>
+    <a href="#cube">Cubing Workflow</a>
+    <a href="#fcc1">Responsive Web Design Certification</a>
+  </div>
+
+  <div class="content">
+
+    <div id="intro">
+      <h1 id="home">🥘Masoud's ICS4U Portfolio🥘</h1>
+    </div>
+    <h1>Preface</h1>
+    <p>This is my ICS4U portfolio, where I organized everything I learned during the two and a half quadmester into a single website. To describe how this learning process went, I can confidently say that I have been able to develop better learning skills in regards to computing in the way we were given the course. To have the freedom to learn and process all the new content at your own pace while also being given the opportunity to learn other concepts has enabled me to learn much more than expected. It also gave me more tools on how to code outside of the classroom, making the newly-formed skills useful in adjacent to the class and to my personal enjoyment. I also was able to use the new skills I learned to create stuff that was useful to me in a way unrelated to the class. The reason why I consider these skills to be useful is because I have intentions on pursuing Computer Science after high school, so the more skills I can pick up will be useful to me. </p>
+    <img id="webdev" src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png">
+    <h1 id="csp1">Computer Science Principles: Programming</h1>
+    <p>This mandatory programming module helped to be able to critically understand and process code in the form of pseudocode in order to visualize what the code is asking. The examples of what you were tested on was mainly algorithm questions that truly required you to think in the sense that it wasn't a traditional language, but simply more of them giving you concept questions to see if you understand. By that logic, it was a pretty valuable start to the course since it enabled you to think effectively in regards to coding so that you could bring this mindset over to the real language concepts in regards to web developement. I achieved complete mastery on this module on Khan Academy. <br> <br>Specfic examples of the units I was tested on: </p>
+    <ul>
+      <li>Variables</li>
+      <li>Mathematical expressions, procedures and constants</li>
+      <li>String manipulation (concatation, etc)</li>
+      <li>Conditional statements including nested conditionals and booleans</li>
+      <li>Functions and how to call and define them</li>
+      <li>Loops and iterating through them</li>
+    </ul>
+    <img id="webdev" src="https://i.imgur.com/qrtraXt.png"><img>
+
+    <h1 id="csp2">Computer Science Principles: Digital Information</h1>
+    <p>Although this wasn't officially an assigned module, I decided to go out of my way to benefit myself in terms of what I understand about computing principles. So, I learn and tested on what digital information is and how it essentially built the foundation for computers today. The most important thing I learned from this was understanding how binary works and how to decode binary to numbers using doubling numbers somewhat in the sense of what a factorial is with 1,2,4,8 and so forth. It also showed me what analog data, data compression and digital licenses are which weren't as insightful as binary concepts but were still important to learn. So now I also understand what licenses such as the Creative Commons on. This helped me as a student since I now know how the basis of all computing works which can potentially help me out in the future when I pursue more education in this field. I achieve full mastery on this course in Khan Academy.</p>
+
+    <img src="https://i.imgur.com/FwXq61c.png"></img>
+
+    <h1 id="js">Intro to JavaScript: Drawing & Animation</h1>
+    <p>This was the first coding based module I worked on in the semester. I found the majority of this to be review since the syntax and concepts were identical to what I learned in ICS3U with C++. The one thing I newly learned was object oriented programming, which I didn't know was a thing yet. I don't really see a use for objects in our level of coding however I see the potential it will have for projects in the years to come, so to be familiar with it now will be beneficial. Apart from that, the code was being presented with Processing JS, a library to make visualizations which helped a lot in demonstrating the code. I would assume if this was my first time ever coding, the shapes and animations made would've helped a lot on seeing the code of what it presents and not simply being a bunch of text that makes commands. This will help me as a student in the further since it these skills will carry on (and already has) in terms of what I am developping in front-end projects. The greatest impact on this was learning the difference between a web based language and something like C++, since you don't need to compile. </p>
+    <h3>My Fish Tank project, source code in my Github</h3>
+    <canvas id="fishtank"></canvas>
+
+    <script>
+      var sketchProc = function(processingInstance) {
+        with(processingInstance) {
+          size(500, 500);
+          frameRate(30);
+          // ProgramCodeGoesHere
+          background(89, 216, 255);
+          var bodyLength = 118;
+          var bodyHeight = 74;
+          var bodyColor = color(162, 0, 255);
+          noStroke();
+          var bubbles = function(posX, posY) {
+            fill(78, 187, 204);
+            ellipse(posX, posY, 30, 30);
+          };
+          // Repeating the bubbles every time
+          bubbles(random(0, 500), random(0, 500));
+          bubbles(random(0, 500), random(0, 500));
+          bubbles(random(0, 500), random(0, 500));
+          bubbles(random(0, 500), random(0, 500));
+          bubbles(random(0, 500), random(0, 500));
+          bubbles(random(0, 500), random(0, 500));
+          bubbles(random(0, 500), random(0, 500));
+          // Fish Function
+          var fish = function(posX, posY, eyeSize) {
+            fill(bodyColor);
+            // body
+            ellipse(posX, posY, bodyLength, bodyHeight);
+            // tail
+            var tailWidth = bodyLength / 4;
+            var tailHeight = bodyHeight / 2;
+            triangle(posX - bodyLength / 2, posY,
+              posX - bodyLength / 2 - tailWidth, posY - tailHeight,
+              posX - bodyLength / 2 - tailWidth, posY + tailHeight);
+            // eye
+            fill(random(0, 255), random(0, 255), random(0, 255));
+            ellipse(posX + bodyLength / 4, posY, eyeSize, eyeSize);
+          };
+          // Every time you refresh the colour is random
+          fish(143, 256, random(1, 30));
+          fish(302, 181, random(1, 30));
+          fish(143, 110, random(1, 30));
+          fish(300, 51, random(1, 30));
+          // Clicking adds more random fish
+          mouseClicked = function() {
+            fish(random(0, 500), random(0, 500), random(1, 30));
+          };
+          fill(15, 13, 13);
+          textSize(30);
+          text("Click to add more fish", 98, 397);
+        }
+      };
+      // Get the canvas that Processing-js will use
+      var canvas = document.getElementById("fishtank");
+      // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+      var processingInstance = new Processing(canvas, sketchProc);
+    </script>
+  
+  <p>Here is my bookshelf project with the emphasis on using basic objects</p>
+  <img src="https://i.imgur.com/g8JEWq6.png"></img>
+
+    <h1 id="html">Intro to HTML/CSS: Making webpages</h1>
+    <p>Now before I actually took the course, every time I saw HTML whether it be through Inspect Element or in various medias I was always very confused. To me, it looked harder to write than actual code such as the C++ or ActionScript I learned in previous classes due to the way everything was organized. Now that I finally finished the course and learned how to make websites (with this site entirely being HTML), I can conclude that it is much easier than real coding than what I initially thought. Now the interesting part of HTML is that since it is the foundation for a majority of websites, it is impressive to see how people organize it with the addition of CSS to make visually stunning results. Those skills helped me learn how to make headers, text, paragraphs, markdowns and much more, and then with the addition of CSS I was able to learn a lot more. I find CSS interesting because it has the ability to make a boring simple website into something like an interactive site that can even have animations. HTML has the potential to be something I do in my future , depening on if I want to go more in depth of Web Developement, so now that I have the basics down my background in designing websites can be beneficial in the future. The biggest impact on this course as a student was for sure how creative you can get with websites.</p>
+    <p>Example of an early project I did</p>
+    <img src="https://i.imgur.com/rqJqRK9.png"></img>
+
+    <h1 id="sql">Intro to SQL: Querying and managing data</h1>
+    <p>I consider this to be the most unique module out of everything I took. SQL is a programming language meant specifically to manipulate data and store it, and which I assume ties together with other programs. Although I didn't get the opportunity to add SQL into any other programs of mine, the ability to be familiarized with the language was useful to me. This one was also specifically interesting as I had 0 knowledge on what it was compared to what HTML/CSS/JS is, so learning from the bottom up was enjoyable. I assume the realm of SQL is what Data Sciences is related to, so to be introduced to multiple fields of Computer Science is very important to me as I continue to pave out my future and see everything possible. The most impactful part of this module was being able to query data in well formatted ways. I will continue to develop new skills in all parts of computing in order to better myself as a programmer. Below is an example of my Famous Peoples project</p>
+
+    <img src="https://i.imgur.com/6UqMpEl.png"></img>
+
+    <h1 id="games">Advanced JS: Games & Visualizations</h1>
+    <p>This was the start of more advanced coding in regards to JavaScript and general algorithm systems. It required you to think more critically on how to solve problems using JS using multiple concepts, and not simply just fufilling a single task compared to what Intro to JavaScript was constructed. I admit the beginning of this was harder than what I anticipated, so it required extensive efforts to complete the module with being able to think more effectively on what is going on. However, this ability to figure out what is going on in the code and debug is a crucial skill that always has room for improvement. The most important part of the module was definitely figuring out how to solve the program to its intended way.</p>
+
+    <p>I can't add the game into the site as it doesn't support the custom KhanAcademy files / images</p>
+
+    <img src="https://i.imgur.com/82v97Ei.png" </img>
+
+    <h1 id="noc">Advanced JS: Natural Simulations</h1>
+    <p>This was one of the more visual modules in my opinion. It is also one of the more educational ones in the sense that it branches concepts exterior of computer science, most specifically physics. The fact that it incorporates stuff like vectors, forces and gravity which you all learn in Grade 11 Physics and implements it into a functioning program gave the sense that CS can branch into a lot of other things, which I find very interesting. On a difficulty level is was slighty harder than Games and Visualisations, however it was also more enlightening once you got the code to work since it was more visually insightful. It also made use of Object-Oriented programs with methods, which was also something I was new to so being able to practice with it was important. </p>
+
+<p>This is the starting project I did in NOC, and the second one being my final NOC project.</p>
+    <canvas id="noce"></canvas>
+
+    <script>
+      var sketchProc = function(processingInstance) {
+        with(processingInstance) {
+          size(500, 500);
+          frameRate(30);
+          // ProgramCodeGoesHere
+          var faces = function() {
+            var Mover = function() {
+              this.position = new PVector(random(width), random(height));
+              this.velocity = new PVector(0, 0);
+              this.acceleration = new PVector(0, 0);
+            };
+            Mover.prototype.update = function() {
+              var mouse = new PVector(mouseX, mouseY);
+              var dir = PVector.sub(mouse, this.position);
+              dir.normalize();
+              dir.mult(15.8);
+              this.acceleration = dir;
+              this.velocity.add(this.acceleration);
+              this.velocity.limit(361);
+              this.position.add(this.velocity);
+            };
+            Mover.prototype.display = function() {
+              stroke(217, 196, 59);
+              strokeWeight(2);
+              fill(235, 227, 82);
+              ellipse(this.position.x, this.position.y, 50, 50);
+              fill(235, 0, 0);
+              ellipse(this.position.x + 10, this.position.y - 10, 15, 15);
+              ellipse(this.position.x - 9, this.position.y - 10, 15, 15);
+              fill(255, 255, 255);
+              ellipse(this.position.x - 1, this.position.y + 11, 21, 21);
+            };
+            Mover.prototype.checkEdges = function() {
+              if (this.position.x > width) {
+                this.position.x = 0;
+              } else if (this.position.x < 0) {
+                this.position.x = width;
+              }
+              if (this.position.y > height) {
+                this.position.y = 0;
+              } else if (this.position.y < 0) {
+                this.position.y = height;
+              }
+            };
+            var movers = [];
+            for (var i = 0; i < 100; i++) {
+              movers[i] = new Mover();
+            }
+            draw = function() {
+              background(255, 255, 255);
+              for (var i = 0; i < movers.length; i++) {
+                movers[i].update();
+                movers[i].display();
+              }
+            };
+          };
+          faces();
+        }
+      };
+      // Get the canvas that Processing-js will use
+      var canvas = document.getElementById("noce");
+      // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+      var processingInstance = new Processing(canvas, sketchProc);
+    </script>
+
+    <canvas id="noc2"></canvas>
+
+    <script>
+      var sketchProc = function(processingInstance) {
+        with(processingInstance) {
+          size(500, 500);
+          frameRate(30);
+          // ProgramCodeGoesHere
+          
+          // Angle mode = radians
+angleMode = "radians";
+var period = 48;     // length of one period in frames
+var amplitude = 100;  // in pixels
+stroke(0, 0, 0);
+strokeWeight(2);
+fill(127);
+
+//global variable as gravity force
+var force = 1;
+
+//Biggest possible PVector that fits in the canvas
+var maxDir = PVector.sub (new PVector (0, 0), new PVector (width-1, height-1));
+
+//Magnitude of that vector
+var maxMag = maxDir.mag();
+
+//defining the properties 
+var Torch = function(){
+    this.position = new PVector(width/2, height-100);
+    this.mass = 40;
+};
+
+//function that calculates the attraction of the dudes
+Torch.prototype.calculateAttraction = function(m){
+    //direction of the force
+    var forceOfR = PVector.sub(this.position, m.position);
+    //how far away the objects are
+    var distance = forceOfR.mag();
+    //keeping distance within reasonable size
+    distance = constrain(distance, 5, 50);  
+    forceOfR.normalize();
+    //calculating gravity
+    var strength = (this.force * this.mass * m.mass) / (distance * distance);
+    forceOfR.mult(strength);
+    return forceOfR;
+};
+
+// torch thing
+Torch.prototype.display = function(){
+ 
+    
+    stroke(0, 0, 0);
+    strokeWeight(4);
+    line(this.position.x, this.position.y+100, this.position.x, this.position.y+20);
+    line(this.position.x+10, this.position.y+100, this.position.x, this.position.y+20);
+    line(this.position.x-10, this.position.y+100, this.position.x, this.position.y+20);
+    fill(255, 153, 0);
+    noStroke();
+    ellipse(200, 309, 40, 40);
+};
+
+
+//dude function containing properties of the face 
+var Dude = function(m, x, y) {
+    this.mass = m;
+    this.position = new PVector(x, y);
+    this.velocity = new PVector(1, 0);
+    this.acceleration = new PVector(0, 0);
+};
+
+//updating dudes 
+Dude.prototype.update = function() {
+    var m = new PVector(random(400), random(400));
+    var dir = PVector.sub(m, this.position);
+    var closeness = (maxMag - dir.mag()) / maxMag;
+    dir.normalize();
+    //adding 1 to closeness to create more of a "buzzing" effect, aka the dude is not moving in such a direct straight line
+    dir.mult(closeness+1);
+    
+    this.acceleration = dir;
+    
+    this.velocity.add(this.acceleration);
+    this.velocity.limit(5);
+    this.position.add(this.velocity);
+};
+
+//dispalying the dudes
+Dude.prototype.display = function() {
+  stroke(217, 196, 59);
+  strokeWeight(2);
+  fill(235, 227, 82);
+  ellipse(this.position.x, this.position.y, 50, 50);
+  fill(235, 0, 0);
+  ellipse(this.position.x+10, this.position.y-10, 15, 15);
+  ellipse(this.position.x-9, this.position.y-10, 15, 15);
+  fill(255, 255, 255);
+  ellipse(this.position.x-1, this.position.y+11, 21, 21);
+};
+
+//calculating attraction between dudes
+Dude.prototype.calculateAttraction = function(m) {
+    var forceOfA = PVector.sub(this.position, m.position);
+    var distance = forceOfA.mag();
+    distance = constrain(distance, 5.0, 25.0);
+    forceOfA.normalize();
+    var strength = (force * this.mass * m.mass) / (distance * distance);
+    forceOfA.mult(strength);
+    return forceOfA;
+};
+
+
+//applying forces to change acceleration of dudes
+Dude.prototype.applyForce = function(forces) {
+    var f = PVector.div(forces, this.mass);
+    this.acceleration.add(f);
+};
+
+var torch = new Torch();
+
+//declaring array for new dudes
+var dude = [];
+//creating new dudes at randomized locations
+for (var i = 0; i < 2; i++) {
+    dude[i] = new Dude(random(0.1, 2), random(width), random(height));
+}
+
+draw = function() {
+    background(190, 246, 247);
+    
+    // OSCILLATING DUDE
+    var x = amplitude * sin(TWO_PI * frameCount / period);
+    pushMatrix();
+    translate(width/2, height/2);
+    line(-169, -174, x, 9);
+    fill(255, 234, 0);
+    ellipse(x, 0, 48, 48);
+    fill(255, 0, 0);
+    ellipse(x+5, -9, 15, 15);
+    ellipse(x-10, -9, 15, 15);
+    popMatrix();
+    
+    //looping through all of the movers
+    for (var i = 0; i < dude.length; i++) {
+        
+        var forceOfF = torch.calculateAttraction(dude[i]);
+        dude[i].applyForce(forceOfF);
+        
+        //loop to make each mover be attracted to all other movers
+        for (var j = 0; j < dude.length; j++) {
+            //making sure the mover is not attracted to itself
+            if (i !== j) {
+                var forceOfA = dude[j].calculateAttraction(dude[i]);
+                //applying the repulsion
+                dude[i].applyForce(forceOfA);
+            }
+        }
+        //calling the update and display functions
+        torch.display();
+        dude[i].update();
+        dude[i].display();
+    }
+};
+        }
+      };
+      // Get the canvas that Processing-js will use
+      var canvas = document.getElementById("noc2");
+      // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+      var processingInstance = new Processing(canvas, sketchProc);
+    </script>
+
+
+    <h1 id="dom">HTML/JS: Making webpages interactive</h1>
+    <h1 id="jquery">HTML/JS: Making webpages interactive with jQuery</h1>
+    <h1 id="cube">Algorithms Exploration - Cubing Workflow
+</h1>
+  </div>
+
+</body> to Processing's constructor.
     var processingInstance = new Processing(canvas, sketchProc); 
  </script>
 </div>
