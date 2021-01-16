@@ -5,120 +5,7 @@
 <!--- DO NOT DELETE ---->
 
 
- <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
-
-<body>
-<div class="sidebar">
-  <a href="#intro">Home</a>
-  <a href="#csp1">Computer Science Principles: Programming</a>
-  <a href="#csp2">Computer Science Principles: Digital Information</a>
-  <a href="#js">Intro to JS</a>
-  <a href="#html">Intro to HTML</a>
-  <a href="#sql">Intro to SQL</a>
-  <a href="#games">Games & Visualizations</a>
-  <a href="#noc">Natural Simulations</a>
-  <a href="#dom">Making Webpages Interactive</a>
-  <a href="#jquery">Intro to jQuery</a>
-  <a href="#cube">Cubing Workflow</a>
-  <a href="#fcc1">Responsive Web Design Certification</a>
-</div>
-
-<div class="content">
-
-  <div id="intro">
-      <h1 id="home">🥘Masoud's ICS4U Portfolio🥘</h1>
-  </div>
-  <h1>Preface</h1>
-  <p>This is my ICS4U portfolio, where I organized everything I learned during the two and a half quadmester into a single website. To describe how this learning process went, I can confidently say that I have been able to develop better learning skills in regards to computing in the way we were given the course. To have the freedom to learn and process all the new content at your own pace while also being given the opportunity to learn other concepts has enabled me to learn much more than expected. It also gave me more tools on how to code outside of the classroom, making the newly-formed skills useful in adjacent to the class and to my personal enjoyment. I also was able to use the new skills I learned to create stuff that was useful to me in a way unrelated to the class. The reason why I consider these skills to be useful is because I have intentions on pursuing Computer Science after high school, so the more skills I can pick up will be useful to me. </p>
- <img id="webdev" src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png">
-  <h1 id="csp1">Computer Science Principles: Programming</h1>
-  <p>This mandatory programming module helped to be able to critically understand and process code in the form of pseudocode in order to visualize what the code is asking. The examples of what you were tested on was mainly algorithm questions that truly required you to think in the sense that it wasn't a traditional language, but simply more of them giving you concept questions to see if you understand. By that logic, it was a pretty valuable start to the course since it enabled you to think effectively in regards to coding so that you could bring this mindset over to the real language concepts in regards to web developement. I achieved complete mastery on this module on Khan Academy. <br> <br>Specfic examples of the units I was tested on: </p>
-  <ul>
-  <li>Variables</li>
-  <li>Mathematical expressions, procedures and constants</li>
-  <li>String manipulation (concatation, etc)</li>
-  <li>Conditional statements including nested conditionals and booleans</li>
-  <li>Functions and how to call and define them</li>
-  <li>Loops and iterating through them</li>
-</ul>
-  <img id="webdev" src="https://i.imgur.com/qrtraXt.png"><img>
-  
-    <h1 id="csp2">Computer Science Principles: Digital Information</h1>
-  <p>Although this wasn't officially an assigned module, I decided to go out of my way to benefit myself in terms of what I understand about computing principles. So, I learn and tested on what digital information is and how it essentially built the foundation for computers today. The most important thing I learned from this was understanding how binary works and how to decode binary to numbers using doubling numbers somewhat in the sense of what a factorial is with 1,2,4,8 and so forth. It also showed me what analog data, data compression and digital licenses are which weren't as insightful as binary concepts but were still important to learn. So now I also understand what licenses such as the Creative Commons on. This helped me as a student since I now know how the basis of all computing works which can potentially help me out in the future when I pursue more education in this field. I achieve full mastery on this course in Khan Academy.</p>
-  
-  <img src="https://i.imgur.com/FwXq61c.png"></img>
-  
-    <h1 id="js">Intro to JavaScript: Drawing & Animation</h1>
-  <p>This was the first coding based module I worked on in the semester. I found the majority of this to be review since the syntax and concepts were identical to what I learned in ICS3U with C++. The one thing I newly learned was object oriented programming, which I didn't know was a thing yet. I don't really see a use for objects in our level of coding however I see the potential it will have for projects in the years to come, so to be familiar with it now will be beneficial. Apart from that, the code was being presented with Processing JS, a library to make visualizations which helped a lot in demonstrating the code. I would assume if this was my first time ever coding, the shapes and animations made would've helped a lot on seeing the code of what it presents and not simply being a bunch of text that makes commands. This will help me as a student in the further since it these skills will carry on (and already has) in terms of what I am developping in front-end projects. </p>
-  <h3>Screenshot of my Fish Tank project, source code in my Github</h3>
-   <canvas id="fishtank"></canvas>
-  <h1 id="html">Intro eto HTML/CSS: Making webpages</h1>
-         
-    <script>
-    var sketchProc = function(processingInstance) {
-     with (processingInstance) {
-        size(500, 500); 
-        frameRate(30);
-        
-        // ProgramCodeGoesHere
-background(89, 216, 255);
-
-var bodyLength = 118;
-var bodyHeight = 74;
-var bodyColor = color(162, 0, 255);
-
-noStroke();
-
-var bubbles = function(posX, posY)
-{
-    fill(78, 187, 204);
-    ellipse(posX, posY, 30, 30);
-};
-
-// Repeating the bubbles every time
-bubbles(random(0,500),random(0,500));
-bubbles(random(0,500),random(0,500));
-bubbles(random(0,500),random(0,500));
-bubbles(random(0,500),random(0,500));
-bubbles(random(0,500),random(0,500));
-bubbles(random(0,500),random(0,500));
-bubbles(random(0,500),random(0,500));
-
-// Fish Function
-var fish = function(posX, posY, eyeSize){
-    fill(bodyColor);
-    // body
-    ellipse(posX, posY, bodyLength, bodyHeight);
-    // tail
-    var tailWidth = bodyLength/4;
-    var tailHeight = bodyHeight/2;
-    triangle(posX-bodyLength/2, posY,
-         posX-bodyLength/2-tailWidth, posY-tailHeight,
-         posX-bodyLength/2-tailWidth, posY+tailHeight);
-    // eye
-    fill(random(0,255), random(0,255), random(0,255));
-    ellipse(posX+bodyLength/4, posY, eyeSize, eyeSize);
-};
-
-// Every time you refresh the colour is random
-fish(143, 256,random(1,30));
-fish(302, 181,random(1,30));
-fish(143, 110,random(1,30));
-fish(300, 51,random(1,30));
-
-// Clicking adds more random fish
-mouseClicked = function() {
- fish(random(0,500), random(0,500),random(1,30));
-};
-
-fill(15, 13, 13);
-textSize(30);
-text("Click to add more fish", 98, 397);
-    }};
-
-    // Get the canvas that Processing-js will use
-    var canvas = document.getElementById("fishtank"); 
-    // Pass the function sketchProc (defined in myCode.js)<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
 
 <body>
   <div class="sidebar">
@@ -492,13 +379,6 @@ draw = function() {
     <h1 id="cube">Algorithms Exploration - Cubing Workflow
 </h1>
   </div>
-
-</body> to Processing's constructor.
-    var processingInstance = new Processing(canvas, sketchProc); 
- </script>
-</div>
-
-
 
 </body>
 
