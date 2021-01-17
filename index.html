@@ -21,6 +21,7 @@
     <a href="#jquery">Intro to jQuery</a>
     <a href="#cube">Cubing Workflow</a>
     <a href="#fcc1">Responsive Web Design Certification</a>
+    <a href="#fcc2">JavaScript Algorithms and Data Structures Certification</a>
   </div>
 
   <div class="content">
@@ -110,9 +111,9 @@
       // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
       var processingInstance = new Processing(canvas, sketchProc);
     </script>
-  
-  <p>Here is my bookshelf project with the emphasis on using basic objects</p>
-  <img src="https://i.imgur.com/g8JEWq6.png"></img>
+
+    <p>Here is my bookshelf project with the emphasis on using basic objects</p>
+    <img src="https://i.imgur.com/g8JEWq6.png"></img>
 
     <h1 id="html">Intro to HTML/CSS: Making webpages</h1>
     <p>Now before I actually took the course, every time I saw HTML whether it be through Inspect Element or in various medias I was always very confused. To me, it looked harder to write than actual code such as the C++ or ActionScript I learned in previous classes due to the way everything was organized. Now that I finally finished the course and learned how to make websites (with this site entirely being HTML), I can conclude that it is much easier than real coding than what I initially thought. Now the interesting part of HTML is that since it is the foundation for a majority of websites, it is impressive to see how people organize it with the addition of CSS to make visually stunning results. Those skills helped me learn how to make headers, text, paragraphs, markdowns and much more, and then with the addition of CSS I was able to learn a lot more. I find CSS interesting because it has the ability to make a boring simple website into something like an interactive site that can even have animations. HTML has the potential to be something I do in my future , depening on if I want to go more in depth of Web Developement, so now that I have the basics down my background in designing websites can be beneficial in the future. The biggest impact on this course as a student was for sure how creative you can get with websites.</p>
@@ -134,7 +135,7 @@
     <h1 id="noc">Advanced JS: Natural Simulations</h1>
     <p>This was one of the more visual modules in my opinion. It is also one of the more educational ones in the sense that it branches concepts exterior of computer science, most specifically physics. The fact that it incorporates stuff like vectors, forces and gravity which you all learn in Grade 11 Physics and implements it into a functioning program gave the sense that CS can branch into a lot of other things, which I find very interesting. On a difficulty level is was slighty harder than Games and Visualisations, however it was also more enlightening once you got the code to work since it was more visually insightful. It also made use of Object-Oriented programs with methods, which was also something I was new to so being able to practice with it was important. </p>
 
-<p>This is the starting project I did in NOC, and the second one being my final NOC project.</p>
+    <p>This is the starting project I did in NOC, and the second one being my final NOC project.</p>
     <canvas id="noce"></canvas>
 
     <script>
@@ -211,160 +212,135 @@
           size(500, 500);
           frameRate(30);
           // ProgramCodeGoesHere
-          
           // Angle mode = radians
-angleMode = "radians";
-var period = 48;     // length of one period in frames
-var amplitude = 100;  // in pixels
-stroke(0, 0, 0);
-strokeWeight(2);
-fill(127);
-
-//global variable as gravity force
-var force = 1;
-
-//Biggest possible PVector that fits in the canvas
-var maxDir = PVector.sub (new PVector (0, 0), new PVector (width-1, height-1));
-
-//Magnitude of that vector
-var maxMag = maxDir.mag();
-
-//defining the properties 
-var Torch = function(){
-    this.position = new PVector(width/2, height-100);
-    this.mass = 40;
-};
-
-//function that calculates the attraction of the dudes
-Torch.prototype.calculateAttraction = function(m){
-    //direction of the force
-    var forceOfR = PVector.sub(this.position, m.position);
-    //how far away the objects are
-    var distance = forceOfR.mag();
-    //keeping distance within reasonable size
-    distance = constrain(distance, 5, 50);  
-    forceOfR.normalize();
-    //calculating gravity
-    var strength = (this.force * this.mass * m.mass) / (distance * distance);
-    forceOfR.mult(strength);
-    return forceOfR;
-};
-
-// torch thing
-Torch.prototype.display = function(){
- 
-    
-    stroke(0, 0, 0);
-    strokeWeight(4);
-    line(this.position.x, this.position.y+100, this.position.x, this.position.y+20);
-    line(this.position.x+10, this.position.y+100, this.position.x, this.position.y+20);
-    line(this.position.x-10, this.position.y+100, this.position.x, this.position.y+20);
-    fill(255, 153, 0);
-    noStroke();
-    ellipse(200, 309, 40, 40);
-};
-
-
-//dude function containing properties of the face 
-var Dude = function(m, x, y) {
-    this.mass = m;
-    this.position = new PVector(x, y);
-    this.velocity = new PVector(1, 0);
-    this.acceleration = new PVector(0, 0);
-};
-
-//updating dudes 
-Dude.prototype.update = function() {
-    var m = new PVector(random(400), random(400));
-    var dir = PVector.sub(m, this.position);
-    var closeness = (maxMag - dir.mag()) / maxMag;
-    dir.normalize();
-    //adding 1 to closeness to create more of a "buzzing" effect, aka the dude is not moving in such a direct straight line
-    dir.mult(closeness+1);
-    
-    this.acceleration = dir;
-    
-    this.velocity.add(this.acceleration);
-    this.velocity.limit(5);
-    this.position.add(this.velocity);
-};
-
-//dispalying the dudes
-Dude.prototype.display = function() {
-  stroke(217, 196, 59);
-  strokeWeight(2);
-  fill(235, 227, 82);
-  ellipse(this.position.x, this.position.y, 50, 50);
-  fill(235, 0, 0);
-  ellipse(this.position.x+10, this.position.y-10, 15, 15);
-  ellipse(this.position.x-9, this.position.y-10, 15, 15);
-  fill(255, 255, 255);
-  ellipse(this.position.x-1, this.position.y+11, 21, 21);
-};
-
-//calculating attraction between dudes
-Dude.prototype.calculateAttraction = function(m) {
-    var forceOfA = PVector.sub(this.position, m.position);
-    var distance = forceOfA.mag();
-    distance = constrain(distance, 5.0, 25.0);
-    forceOfA.normalize();
-    var strength = (force * this.mass * m.mass) / (distance * distance);
-    forceOfA.mult(strength);
-    return forceOfA;
-};
-
-
-//applying forces to change acceleration of dudes
-Dude.prototype.applyForce = function(forces) {
-    var f = PVector.div(forces, this.mass);
-    this.acceleration.add(f);
-};
-
-var torch = new Torch();
-
-//declaring array for new dudes
-var dude = [];
-//creating new dudes at randomized locations
-for (var i = 0; i < 2; i++) {
-    dude[i] = new Dude(random(0.1, 2), random(width), random(height));
-}
-
-draw = function() {
-    background(190, 246, 247);
-    
-    // OSCILLATING DUDE
-    var x = amplitude * sin(TWO_PI * frameCount / period);
-    pushMatrix();
-    translate(width/2, height/2);
-    line(-169, -174, x, 9);
-    fill(255, 234, 0);
-    ellipse(x, 0, 48, 48);
-    fill(255, 0, 0);
-    ellipse(x+5, -9, 15, 15);
-    ellipse(x-10, -9, 15, 15);
-    popMatrix();
-    
-    //looping through all of the movers
-    for (var i = 0; i < dude.length; i++) {
-        
-        var forceOfF = torch.calculateAttraction(dude[i]);
-        dude[i].applyForce(forceOfF);
-        
-        //loop to make each mover be attracted to all other movers
-        for (var j = 0; j < dude.length; j++) {
-            //making sure the mover is not attracted to itself
-            if (i !== j) {
-                var forceOfA = dude[j].calculateAttraction(dude[i]);
-                //applying the repulsion
-                dude[i].applyForce(forceOfA);
+          angleMode = "radians";
+          var period = 48; // length of one period in frames
+          var amplitude = 100; // in pixels
+          stroke(0, 0, 0);
+          strokeWeight(2);
+          fill(127);
+          //global variable as gravity force
+          var force = 1;
+          //Biggest possible PVector that fits in the canvas
+          var maxDir = PVector.sub(new PVector(0, 0), new PVector(width - 1, height - 1));
+          //Magnitude of that vector
+          var maxMag = maxDir.mag();
+          //defining the properties 
+          var Torch = function() {
+            this.position = new PVector(width / 2, height - 100);
+            this.mass = 40;
+          };
+          //function that calculates the attraction of the dudes
+          Torch.prototype.calculateAttraction = function(m) {
+            //direction of the force
+            var forceOfR = PVector.sub(this.position, m.position);
+            //how far away the objects are
+            var distance = forceOfR.mag();
+            //keeping distance within reasonable size
+            distance = constrain(distance, 5, 50);
+            forceOfR.normalize();
+            //calculating gravity
+            var strength = (this.force * this.mass * m.mass) / (distance * distance);
+            forceOfR.mult(strength);
+            return forceOfR;
+          };
+          // torch thing
+          Torch.prototype.display = function() {
+            stroke(0, 0, 0);
+            strokeWeight(4);
+            line(this.position.x, this.position.y + 100, this.position.x, this.position.y + 20);
+            line(this.position.x + 10, this.position.y + 100, this.position.x, this.position.y + 20);
+            line(this.position.x - 10, this.position.y + 100, this.position.x, this.position.y + 20);
+            fill(255, 153, 0);
+            noStroke();
+            ellipse(200, 309, 40, 40);
+          };
+          //dude function containing properties of the face 
+          var Dude = function(m, x, y) {
+            this.mass = m;
+            this.position = new PVector(x, y);
+            this.velocity = new PVector(1, 0);
+            this.acceleration = new PVector(0, 0);
+          };
+          //updating dudes 
+          Dude.prototype.update = function() {
+            var m = new PVector(random(400), random(400));
+            var dir = PVector.sub(m, this.position);
+            var closeness = (maxMag - dir.mag()) / maxMag;
+            dir.normalize();
+            //adding 1 to closeness to create more of a "buzzing" effect, aka the dude is not moving in such a direct straight line
+            dir.mult(closeness + 1);
+            this.acceleration = dir;
+            this.velocity.add(this.acceleration);
+            this.velocity.limit(5);
+            this.position.add(this.velocity);
+          };
+          //dispalying the dudes
+          Dude.prototype.display = function() {
+            stroke(217, 196, 59);
+            strokeWeight(2);
+            fill(235, 227, 82);
+            ellipse(this.position.x, this.position.y, 50, 50);
+            fill(235, 0, 0);
+            ellipse(this.position.x + 10, this.position.y - 10, 15, 15);
+            ellipse(this.position.x - 9, this.position.y - 10, 15, 15);
+            fill(255, 255, 255);
+            ellipse(this.position.x - 1, this.position.y + 11, 21, 21);
+          };
+          //calculating attraction between dudes
+          Dude.prototype.calculateAttraction = function(m) {
+            var forceOfA = PVector.sub(this.position, m.position);
+            var distance = forceOfA.mag();
+            distance = constrain(distance, 5.0, 25.0);
+            forceOfA.normalize();
+            var strength = (force * this.mass * m.mass) / (distance * distance);
+            forceOfA.mult(strength);
+            return forceOfA;
+          };
+          //applying forces to change acceleration of dudes
+          Dude.prototype.applyForce = function(forces) {
+            var f = PVector.div(forces, this.mass);
+            this.acceleration.add(f);
+          };
+          var torch = new Torch();
+          //declaring array for new dudes
+          var dude = [];
+          //creating new dudes at randomized locations
+          for (var i = 0; i < 2; i++) {
+            dude[i] = new Dude(random(0.1, 2), random(width), random(height));
+          }
+          draw = function() {
+            background(190, 246, 247);
+            // OSCILLATING DUDE
+            var x = amplitude * sin(TWO_PI * frameCount / period);
+            pushMatrix();
+            translate(width / 2, height / 2);
+            line(-169, -174, x, 9);
+            fill(255, 234, 0);
+            ellipse(x, 0, 48, 48);
+            fill(255, 0, 0);
+            ellipse(x + 5, -9, 15, 15);
+            ellipse(x - 10, -9, 15, 15);
+            popMatrix();
+            //looping through all of the movers
+            for (var i = 0; i < dude.length; i++) {
+              var forceOfF = torch.calculateAttraction(dude[i]);
+              dude[i].applyForce(forceOfF);
+              //loop to make each mover be attracted to all other movers
+              for (var j = 0; j < dude.length; j++) {
+                //making sure the mover is not attracted to itself
+                if (i !== j) {
+                  var forceOfA = dude[j].calculateAttraction(dude[i]);
+                  //applying the repulsion
+                  dude[i].applyForce(forceOfA);
+                }
+              }
+              //calling the update and display functions
+              torch.display();
+              dude[i].update();
+              dude[i].display();
             }
-        }
-        //calling the update and display functions
-        torch.display();
-        dude[i].update();
-        dude[i].display();
-    }
-};
+          };
         }
       };
       // Get the canvas that Processing-js will use
@@ -373,11 +349,27 @@ draw = function() {
       var processingInstance = new Processing(canvas, sketchProc);
     </script>
 
-
     <h1 id="dom">HTML/JS: Making webpages interactive</h1>
+    <p>This module was important since it finally glued a lot of what I've learned so far into one thing, emphasizing how all these components are what make up front-end developement. It showed how to incorporate JavaScript into an HTML document using the Document Object Model, which also is the basis for a lot of JS libraries. In this module, I learned access methods, modifications, animations AND event listeners which I consider the most interesting since it makes use of your keyboard and mouse. If I continue to learn more of web developpement, then I would need to learn the other JS Libraries which mean I already have the basics down with DOMs. As a result, I can consider that the greates impact and will keep DOMs in mind while further integrating JS and HTML. There were also recaps of each language in which I fully completed alongside the course.</p>
+
+    <img src="https://i.imgur.com/Ac96anQ.png"></img>
+
     <h1 id="jquery">HTML/JS: Making webpages interactive with jQuery</h1>
+
+    <p>This, alongside ProcessingJS were the first libraries that I have learned so far. The jQuery course on Khan Academy allows you to learn about more Document Object Model techniques while using their simplified syntax as compared to what was done with a lot more text. In a sense, it is very related to the previous module since they both do similar tasks, however jQuery makes it much easier to interpret which is what I consider to be very impactful. It is also important to note that jQuery can be the foundation for learning other libraries in JS, so that I can continue to learn more as a CS student as I go further into my personal studies. This module was slightly more obscure on how to get specific things done, which in return incited me to problem solve more effectively which in return was beneficial. Below is a screenshot of my Word Game Project, which is found on my Khan Academy profile.</p>
+
+    <img src="https://i.imgur.com/v4py2xM.png"></img>
     <h1 id="cube">Algorithms Exploration - Cubing Workflow
-</h1>
+    </h1>
+<p>This module is unique in the sense that it isn't necessarily coding, but learning how to solve one can be related back to computer science. Every cube has an algorithm that you have to learn and solve, similar to how there are coding algorithms need to be solved as well. It is crucial to become proficient in those since that is how you become a better coder and land more opportunities in the industry. I managed to learn the easiest cube, the Pyraminx Duo which was a step up from the start of the semester where I didn't know what I was doing. Although it isn't difficult to solve one, it provided me with the steps in order to learn future cubes. The repository included all my speed times, and my project and errors. Below are some screenshots.</p>
+<h2>The Cubing repository can be found <a href="https://github.com/MasoudKarimi04/cubing-workflow">HERE</a></h2>
+
+<img src="https://i.imgur.com/gjsMMon.png"></img>
+<img src="https://i.imgur.com/4rIRW8m.png"></img>
+
+<h1 id="fcc1">Responsive Web Design Certification</h1>
+<h1 id="fcc2">JavaScript Algorithms and Data Structures Certification</h1>
+
   </div>
 
 </body>
