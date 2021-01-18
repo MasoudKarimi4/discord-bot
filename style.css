@@ -1,16 +1,17 @@
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  background: #E0FFFF;
 }
-
 .sidebar {
   margin: 0;
   padding: 0;
   width: 200px;
-  background: linear-gradient(0deg, #F0F0F0, white, #F0F0F0	);
+  background: linear-gradient(0deg, #E0FFFF, white, #E0FFFF, white	);
   position: fixed;
   height: 100%;
   overflow: auto;
+
 }
 
 .sidebar a {
@@ -38,7 +39,7 @@ div.content {
 }
 p {
   font-size: 23px;
-  font-family: times-new-roman
+  font-family: times-new-roman;
 }
 ul {
     font-size: 23px;
@@ -49,3 +50,23 @@ ul {
   width:80%
 }
 
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: absolute;
+    left: 20%;
+    border-radius: 50%;
+      background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 90%;
+
+    }
+  }
