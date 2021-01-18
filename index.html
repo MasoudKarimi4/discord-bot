@@ -5,7 +5,7 @@
 <!--- DO NOT DELETE ---->
 
 
- <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
 
 <body>
   <div class="sidebar">
@@ -22,12 +22,16 @@
     <a href="#cube">Cubing Workflow</a>
     <a href="#fcc1">Responsive Web Design Certification</a>
     <a href="#fcc2">JavaScript Algorithms and Data Structures Certification</a>
+    <a href="#fcc3">NPM and NodeJS</a>
+    <a href="#fcc4">Final Project</a>
   </div>
 
   <div class="content">
 
     <div id="intro">
+      <div id="ball"></div>
       <h1 id="home">🥘Masoud's ICS4U Portfolio🥘</h1>
+      
     </div>
     <h1>Preface</h1>
     <p>This is my ICS4U portfolio, where I organized everything I learned during the two and a half quadmester into a single website. To describe how this learning process went, I can confidently say that I have been able to develop better learning skills in regards to computing in the way we were given the course. To have the freedom to learn and process all the new content at your own pace while also being given the opportunity to learn other concepts has enabled me to learn much more than expected. It also gave me more tools on how to code outside of the classroom, making the newly-formed skills useful in adjacent to the class and to my personal enjoyment. I also was able to use the new skills I learned to create stuff that was useful to me in a way unrelated to the class. The reason why I consider these skills to be useful is because I have intentions on pursuing Computer Science after high school, so the more skills I can pick up will be useful to me. </p>
@@ -51,7 +55,7 @@
 
     <h1 id="js">Intro to JavaScript: Drawing & Animation</h1>
     <p>This was the first coding based module I worked on in the semester. I found the majority of this to be review since the syntax and concepts were identical to what I learned in ICS3U with C++. The one thing I newly learned was object oriented programming, which I didn't know was a thing yet. I don't really see a use for objects in our level of coding however I see the potential it will have for projects in the years to come, so to be familiar with it now will be beneficial. Apart from that, the code was being presented with Processing JS, a library to make visualizations which helped a lot in demonstrating the code. I would assume if this was my first time ever coding, the shapes and animations made would've helped a lot on seeing the code of what it presents and not simply being a bunch of text that makes commands. This will help me as a student in the further since it these skills will carry on (and already has) in terms of what I am developping in front-end projects. The greatest impact on this was learning the difference between a web based language and something like C++, since you don't need to compile. </p>
-    <h3>My Fish Tank project, source code in my Github</h3>
+    <h3>My Fish Tank and rain project, source code in my Github</h3>
     <canvas id="fishtank"></canvas>
 
     <script>
@@ -108,6 +112,51 @@
       };
       // Get the canvas that Processing-js will use
       var canvas = document.getElementById("fishtank");
+      // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+      var processingInstance = new Processing(canvas, sketchProc);
+    </script>
+  
+      <canvas id="jscode"></canvas>
+
+    <script>
+      var sketchProc = function(processingInstance) {
+        with(processingInstance) {
+          size(500, 500);
+          frameRate(30);
+          // ProgramCodeGoesHere
+var xPositions = [200, 250, 300, 350, 150, 100, 50];
+var yPositions = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+var dc1 =[], dc2=[], dc3=[];
+var speed=[];
+draw = function() {
+    background(204, 247, 255);
+
+    noStroke();
+    fill(0, 200, 255);
+
+    for (var i = 0; i < xPositions.length; i++) {
+        
+        dc1[i]=random(0,255);
+        dc2[i]=random(0,255);
+        dc3[i]=random(0,255);
+        
+        speed[i]=random(1, 15);
+        
+        fill(dc1[i],dc2[i],dc3[i]);
+        
+        ellipse(xPositions[i], yPositions[i], 10, 10);
+        yPositions[i] += speed[i];
+        
+        if(yPositions[i] > 400)
+        {
+            yPositions[i]=0;   
+        }
+    }
+};
+        }
+      };
+      // Get the canvas that Processing-js will use
+      var canvas = document.getElementById("jscode");
       // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
       var processingInstance = new Processing(canvas, sketchProc);
     </script>
@@ -361,17 +410,39 @@
     <img src="https://i.imgur.com/v4py2xM.png"></img>
     <h1 id="cube">Algorithms Exploration - Cubing Workflow
     </h1>
-<p>This module is unique in the sense that it isn't necessarily coding, but learning how to solve one can be related back to computer science. Every cube has an algorithm that you have to learn and solve, similar to how there are coding algorithms need to be solved as well. It is crucial to become proficient in those since that is how you become a better coder and land more opportunities in the industry. I managed to learn the easiest cube, the Pyraminx Duo which was a step up from the start of the semester where I didn't know what I was doing. Although it isn't difficult to solve one, it provided me with the steps in order to learn future cubes. The repository included all my speed times, and my project and errors. Below are some screenshots.</p>
-<h2>The Cubing repository can be found <a href="https://github.com/MasoudKarimi04/cubing-workflow">HERE</a></h2>
+    <p>This module is unique in the sense that it isn't necessarily coding, but learning how to solve one can be related back to computer science. Every cube has an algorithm that you have to learn and solve, similar to how there are coding algorithms need to be solved as well. It is crucial to become proficient in those since that is how you become a better coder and land more opportunities in the industry. I managed to learn the easiest cube, the Pyraminx Duo which was a step up from the start of the semester where I didn't know what I was doing. Although it isn't difficult to solve one, it provided me with the steps in order to learn future cubes. The repository included all my speed times, and my project and errors. Below are some screenshots.</p>
+    <h2>The Cubing repository can be found <a href="https://github.com/MasoudKarimi04/cubing-workflow">HERE</a></h2>
 
-<img src="https://i.imgur.com/gjsMMon.png"></img>
-<img src="https://i.imgur.com/4rIRW8m.png"></img>
+    <img src="https://i.imgur.com/gjsMMon.png"></img>
+    <img src="https://i.imgur.com/4rIRW8m.png"></img>
 
-<h1 id="fcc1">Responsive Web Design Certification</h1>
-<h1 id="fcc2">JavaScript Algorithms and Data Structures Certification</h1>
+    <h1 id="fcc1">Responsive Web Design Certification</h1>
+    <p>I started FreeCodeCamp the week we started the course, however I started the web design course at the end of December. There was a variety of concepts covered that weren't included in Khan Academy's HTML class, which helped me learn more HTML and CSS. This class difficulty wise was extremely easy. All it took was consistent effort to be able to finish it within 3 weeks, and as of January I achieved the certificate. Here are examples of what I learned that was different from the Khan class.</p>
+    <ul>
+      <li>More in depth about HTML AND HTML5, concepts such as buttons and radio boxes</li>
+      <li>Nested elements in CSS and HTML</li>
+      <li>Proper color manipulation, learning about Hex Code (ex: 51000D, 934E41, D89E93, etc) as well as proper color schemes</li>
+      <li>More in depth about CSS which is crucial to making nicer websites</li>
+      <li>CSS variables</li>
+      <li>Transformations in CSS (manipulating style sizes)</li>
+      <li>Animations in CSS (no JS at all)</li>
+      <li>Making your webpage more accessable to all users readable elements, indexes, landmarks</li>
+      <li>Placement of ID's using Flexbox and Grid</li>
+    </ul>
+
+<p>As a student, this certification has helped me with more thoroughly understanding HTML and CSS when reading it, with also giving more tools to customize sites when I am making them. This portfolio website is an example of what I have learned so far. I have projects from the certification that I have completed as well.</p>
+
+<h3><a href="https://codepen.io/Mkari/pen/WNGgVrb">Tribute Project</a></h3>
+<h3><a href="https://codepen.io/Mkari/pen/RwGemZN">Survey Project</a></h3>
+<h3><a href="https://codepen.io/Mkari/pen/JjRezbP">Simple Markdown Project</a></h3>
+
+<img src="https://i.imgur.com/ZNLDDFh.png"</img>
+
+    <h1 id="fcc2">JavaScript Algorithms and Data Structures Certification</h1>
+
+<p>This module I find the most interesting. I started it very early into the semester and have continued to learn a lot of new concepts specifically in coding that has been able to benefit me in a variet of ways. It took me a while to finish the first unit of the course, since it had well over 100 tasks. However, what I was able to get out of it was very useful. I can fully admit it has help make me become a better coder, since they scatter a lot of review problems throughout the new lessons that you learn. Since I was doing this in parallel to the Khan JS module, I found myself working very smoothly in Khan since I was brushing up my knowledge here. However, the further I went, the more difficulty algorithm questions I had to solve. </p>
 
   </div>
 
 </body>
-
 </html>
