@@ -11,7 +11,8 @@
   <div class="sidebar">
     <a href="#intro">Home</a>
     <a href="#csp1">Computer Science Principles: Programming</a>
-    <a href="#csp2">Computer Science Principles: Digital Information</a>
+    <a href="#csp2">Computer Science Principles: Digital Information / Algorithms</a>
+    <a href="#csp3">Computer Science Principles: Simulations</a>
     <a href="#js">Intro to JS</a>
     <a href="#html">Intro to HTML</a>
     <a href="#sql">Intro to SQL</a>
@@ -30,13 +31,13 @@
 
     <div id="intro">
       <div id="ball"></div>
-      <h1 id="home">🥘Masoud's ICS4U Portfolio!🥘</h1>
-      
+      <h1 id="home">🥘Masoud's ICS4U Portfolio🥘</h1>
+
     </div>
     <h1>Preface</h1>
     <p>This is my ICS4U portfolio, where I organized everything I learned during the two and a half quadmester into a single website. To describe how this learning process went, I can confidently say that I have been able to develop better learning skills in regards to computing in the way we were given the course. To have the freedom to learn and process all the new content at your own pace while also being given the opportunity to learn other concepts has enabled me to learn much more than expected. It also gave me more tools on how to code outside of the classroom, making the newly-formed skills useful in adjacent to the class and to my personal enjoyment. I also was able to use the new skills I learned to create stuff that was useful to me in a way unrelated to the class. The reason why I consider these skills to be useful is because I have intentions on pursuing Computer Science after high school, so the more skills I can pick up will be useful to me. </p>
     <img id="webdev" src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png">
-    
+
     <h2><a href="https://www.freecodecamp.org/fcc0144e49f-dd19-46bf-840e-30e76dc71f67">My FCC profile that shows when I completed tasks</a></h2>
     <img src="https://i.imgur.com/w7gYzPS.png"></img>
     <h1 id="csp1">Computer Science Principles: Programming</h1>
@@ -53,9 +54,16 @@
 
     <h1 id="csp2">Computer Science Principles: Digital Information</h1>
     <p>Although this wasn't officially an assigned module, I decided to go out of my way to benefit myself in terms of what I understand about computing principles. So, I learn and tested on what digital information is and how it essentially built the foundation for computers today. The most important thing I learned from this was understanding how binary works and how to decode binary to numbers using doubling numbers somewhat in the sense of what a factorial is with 1,2,4,8 and so forth. It also showed me what analog data, data compression and digital licenses are which weren't as insightful as binary concepts but were still important to learn. So now I also understand what licenses such as the Creative Commons on. This helped me as a student since I now know how the basis of all computing works which can potentially help me out in the future when I pursue more education in this field. I achieve full mastery on this course in Khan Academy.</p>
+    <h1>Computer Science Principles: Algorithms</h1>
+    <p>This is the second half of the module which is comprised of this and Digital Information. This class was more on the difficult side of what Computer Science Principles had since it really required you to think critically to solve the algorithm related questions. However, to practice these concepts is crucial to my future success, so I wasn't complaning. Apart from that, it showed new content such as heuristics and distributed computing which was stuff I have never heard of before. It just goes to show how much information regarding tech and computing is out there. As a CS student, this class helped my thinking regarding coding algorithms and the biggest impact was being tested on them.</p>
 
     <img src="https://i.imgur.com/FwXq61c.png"></img>
+    <img src="https://i.imgur.com/3pdsLTR.png"></img>
 
+    <h1 id="csp3">Computer Science Pricniples: Simulations</h1>
+    <p>This small module taught brief explanations about abstract systems in coding, including concepts such as programming simulations, what abstract truly means and principles of simulations. In a sense this course is somewhat like a tested way of the Nature of Code module, since they are pretty similar in content. The most impactful part of this module was probably how they explained coding concepts using pseudocode so that you could transfer their ideas into any language.</p>
+
+    <img src="https://i.imgur.com/kH5tDrj.png"></img>
     <h1 id="js">Intro to JavaScript: Drawing & Animation</h1>
     <p>This was the first coding based module I worked on in the semester. I found the majority of this to be review since the syntax and concepts were identical to what I learned in ICS3U with C++. The one thing I newly learned was object oriented programming, which I didn't know was a thing yet. I don't really see a use for objects in our level of coding however I see the potential it will have for projects in the years to come, so to be familiar with it now will be beneficial. Apart from that, the code was being presented with Processing JS, a library to make visualizations which helped a lot in demonstrating the code. I would assume if this was my first time ever coding, the shapes and animations made would've helped a lot on seeing the code of what it presents and not simply being a bunch of text that makes commands. This will help me as a student in the further since it these skills will carry on (and already has) in terms of what I am developping in front-end projects. The greatest impact on this was learning the difference between a web based language and something like C++, since you don't need to compile. </p>
     <h3>My Fish Tank and rain project, source code in my Github</h3>
@@ -118,8 +126,8 @@
       // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
       var processingInstance = new Processing(canvas, sketchProc);
     </script>
-  
-      <canvas id="jscode"></canvas>
+
+    <canvas id="jscode"></canvas>
 
     <script>
       var sketchProc = function(processingInstance) {
@@ -127,35 +135,29 @@
           size(500, 500);
           frameRate(30);
           // ProgramCodeGoesHere
-var xPositions = [200, 250, 300, 350, 150, 100, 50];
-var yPositions = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-var dc1 =[], dc2=[], dc3=[];
-var speed=[];
-draw = function() {
-    background(204, 247, 255);
-
-    noStroke();
-    fill(0, 200, 255);
-
-    for (var i = 0; i < xPositions.length; i++) {
-        
-        dc1[i]=random(0,255);
-        dc2[i]=random(0,255);
-        dc3[i]=random(0,255);
-        
-        speed[i]=random(1, 15);
-        
-        fill(dc1[i],dc2[i],dc3[i]);
-        
-        ellipse(xPositions[i], yPositions[i], 10, 10);
-        yPositions[i] += speed[i];
-        
-        if(yPositions[i] > 400)
-        {
-            yPositions[i]=0;   
-        }
-    }
-};
+          var xPositions = [200, 250, 300, 350, 150, 100, 50];
+          var yPositions = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+          var dc1 = [],
+            dc2 = [],
+            dc3 = [];
+          var speed = [];
+          draw = function() {
+            background(204, 247, 255);
+            noStroke();
+            fill(0, 200, 255);
+            for (var i = 0; i < xPositions.length; i++) {
+              dc1[i] = random(0, 255);
+              dc2[i] = random(0, 255);
+              dc3[i] = random(0, 255);
+              speed[i] = random(1, 15);
+              fill(dc1[i], dc2[i], dc3[i]);
+              ellipse(xPositions[i], yPositions[i], 10, 10);
+              yPositions[i] += speed[i];
+              if (yPositions[i] > 400) {
+                yPositions[i] = 0;
+              }
+            }
+          };
         }
       };
       // Get the canvas that Processing-js will use
@@ -418,6 +420,7 @@ draw = function() {
 
     <img src="https://i.imgur.com/gjsMMon.png"></img>
     <img src="https://i.imgur.com/4rIRW8m.png"></img>
+    <img id="cubed" src="https://hlavolam.maweb.eu/images/rubikova%20kostka%203x3x3%201.gif"></img>
 
     <h1 id="fcc1">Responsive Web Design Certification (Completed)</h1>
     <p>I started FreeCodeCamp the week we started the course, however I started the web design course at the end of December. There was a variety of concepts covered that weren't included in Khan Academy's HTML class, which helped me learn more HTML and CSS. This class difficulty wise was extremely easy. All it took was consistent effort to be able to finish it within 3 weeks, and as of January I achieved the certificate. Here are examples of what I learned that was different from the Khan class.</p>
@@ -433,19 +436,19 @@ draw = function() {
       <li>Placement of ID's using Flexbox and Grid</li>
     </ul>
 
-<p>As a student, this certification has helped me with more thoroughly understanding HTML and CSS when reading it, with also giving more tools to customize sites when I am making them. This portfolio website is an example of what I have learned so far. I have projects from the certification that I have completed as well.</p>
+    <p>As a student, this certification has helped me with more thoroughly understanding HTML and CSS when reading it, with also giving more tools to customize sites when I am making them. This portfolio website is an example of what I have learned so far. I have projects from the certification that I have completed as well.</p>
 
-<h3><a href="https://codepen.io/Mkari/pen/WNGgVrb">Tribute Project</a></h3>
-<h3><a href="https://codepen.io/Mkari/pen/RwGemZN">Survey Project</a></h3>
-<h3><a href="https://codepen.io/Mkari/pen/JjRezbP">Simple Markdown Project</a></h3>
+    <h3><a href="https://codepen.io/Mkari/pen/WNGgVrb">Tribute Project</a></h3>
+    <h3><a href="https://codepen.io/Mkari/pen/RwGemZN">Survey Project</a></h3>
+    <h3><a href="https://codepen.io/Mkari/pen/JjRezbP">Simple Markdown Project</a></h3>
 
-<img src="https://i.imgur.com/49pBUCd.png"></img>
+    <img src="https://i.imgur.com/49pBUCd.png"></img>
 
-<img src="https://i.imgur.com/ZNLDDFh.png"</img>
+    <img src="https://i.imgur.com/ZNLDDFh.png" </img>
 
     <h1 id="fcc2">JavaScript Algorithms and Data Structures Certification </h1>
 
-<p>This module I find the most interesting. I started it very early into the semester and have continued to learn a lot of new concepts specifically in coding that has been able to benefit me in a variet of ways. It took me a while to finish the first unit of the course, since it had well over 100 tasks. However, what I was able to get out of it was very useful. I can fully admit it has help make me become a better coder, since they scatter a lot of review problems throughout the new lessons that you learn. Since I was doing this in parallel to the Khan JS module, I found myself working very smoothly in Khan since I was brushing up my knowledge here. However, the further I went, the more difficulty algorithm questions I had to solve. I have decided not to continue as of Object Oriented Programming as the difficulty increased exponentially so my goal is to actually complete this certificate in the near future as a side hobby as opposed to it being in the class. I did learn a lot of useful information such as: </p>
+    <p>This module I find the most interesting. I started it very early into the semester and have continued to learn a lot of new concepts specifically in coding that has been able to benefit me in a variet of ways. It took me a while to finish the first unit of the course, since it had well over 100 tasks. However, what I was able to get out of it was very useful. I can fully admit it has help make me become a better coder, since they scatter a lot of review problems throughout the new lessons that you learn. Since I was doing this in parallel to the Khan JS module, I found myself working very smoothly in Khan since I was brushing up my knowledge here. However, the further I went, the more difficulty algorithm questions I had to solve. I have decided not to continue as of Object Oriented Programming as the difficulty increased exponentially so my goal is to actually complete this certificate in the near future as a side hobby as opposed to it being in the class. I did learn a lot of useful information such as: </p>
 
     <ul>
       <li>Review of all basic JS, while also integrating newer university level concepts such as recursion which from my learning is a more efficient alternative to a loop using an if statement in a function. Other stuff included parsing and more throughout iterations.</li>
@@ -454,11 +457,11 @@ draw = function() {
       <li>Debugging, which was just simple methods of how to find errors. Didn't really show me new information, but I guess it was a useful module.</li>
       <li>Basic Data Structures, this was learning more advanced array methods. It showed how nested arrays can become and introducing new functions on how to manipulate them. It showed me new information but I didn't really get a sense on how I could use these in the future unless if I start a massive project.</li>
       <li>Object Oriented Programming, this introduced a lot of concepts that were shown in the Advanced JS projects in Khan such as methods, constructors and prototypes within objects. Since objected oriented is a very big realm in coding, for me to learn more about it is extremely useful and I will continue to learn more. </li>
-</ul>
-      
-      <p>For the project I decided to do only one for time reasons and that was the Palindrome Checker. I must admit it took a lot of trial and error and tries before so. My first error was realizing that the code didn't recognize something like pOP being a palindrome due to the string having different unicode. Other issues came such as how to iterate through and identify, so I did get help from their online Youtube Tutorials. I believe since this wasn't easy at all to me it signifies in the future how much more practice I am going to need in order to figure these out without help from FCC's tutorials. </p>
-      
-      <pre><code>function palindrome(str) {
+    </ul>
+
+    <p>For the project I decided to do only one for time reasons and that was the Palindrome Checker. I must admit it took a lot of trial and error and tries before so. My first error was realizing that the code didn't recognize something like pOP being a palindrome due to the string having different unicode. Other issues came such as how to iterate through and identify, so I did get help from their online Youtube Tutorials. I believe since this wasn't easy at all to me it signifies in the future how much more practice I am going to need in order to figure these out without help from FCC's tutorials. </p>
+
+    <pre><code>function palindrome(str) {
 
   // Converting the string to lowercase in Regex to prevent issues
   str = str.toLowerCase().replace(/[\W_]/g, "");
@@ -471,33 +474,33 @@ draw = function() {
   }return true;
 }
 palindrome("pop");</code></pre>
-  <p>However this small piece of code didn't really define what I learned throughout the multiple modules I completed. If you keep reading I will explain my Node JS Discord Bot with which I also learned how to do using the next module</p>
-  
-  <img src="https://i.imgur.com/DiwoWmV.png"></img>
-      
-      <h1 id="fcc3">API and Microservices Certification </h1>
-      <p>This course was done gradually as I started my bot project over the winter break and only piece by piece took in info that I learned from this module. It introduced me to NPM and Node, which was very important on how to figure out the important tasks. All work was done on Replit.io, to my knowledge is a compiler for almost every popular programming language on a browser. Since a lot of languages are done in software, this may seem as a very accessible method to demonstrating or teaching coding in general. My only complaint from it was that it took a while to compile every time, which is an issue to me personally as it somewhat affects my thought flow. In the future, my goal is to learn even more Advanced Node since it is pretty useful to know. As of right now I have the NPM and Node JS modules complete on this course. My choice to not do any projects is because I made my own project with heavy usage in these concepts. </p>
-<img src="https://i.imgur.com/mYP9caL.png"</img>
+    <p>However this small piece of code didn't really define what I learned throughout the multiple modules I completed. If you keep reading I will explain my Node JS Discord Bot with which I also learned how to do using the next module</p>
 
-<h1 id="bot">My NodeJS Discord Bot Project</h1>
-<p>I started in the winter break, and finished a lot of the work around the start of January. Basically, the project is an interactive bot on the media platform Discord that manipulates multiple API's to give important information while running on Node JS. The program uses multiple concepts including RegEx, CS6 one line functions, CS6 variables and file imports, data structures and use of objects. I made the bot for my own benefit and for the fun of productivity but once I realized it encompasses a lot of what I learned in ICS4U I decided to include it in my portfolio. Here are some notes about the entirety of it.</p>
+    <img src="https://i.imgur.com/DiwoWmV.png"></img>
 
-<ul>
-  <li>I learned how to make the bot with the FCC API course as well as specified tutorials on Youtube to the discord aspect. I initally hosted the bot on Visual Studio Code but decided to change to a custom hoster to keep it on 24/7. The price of it is about 1 or 2 dollars a month so I intend to keep it on for a while</li>
-  <li>I downloaded NPM dependencies to manipulate multiple APIs to give updated information back. These include: Ottawa Weather API, Hypixel Stats API and COVID-19 stats API. The Discord API does encompass all functions within the program.</li>
-  <li>I had a lot of struggle when coding the bot. My most helpful resources were W3Schools, Khan Academy, FreeCodeCamp, Youtube and StackOverflow. They all collectively helped me realized errors most specifically with RegEx and Data Structures.</li>
-  <li>The bot offers a lot of commands once sent to the server. Below is examples of all screenshots of it working. The bot's name is Kabob Bot because I like kabobs.</li>
-</ul>
+    <h1 id="fcc3">API and Microservices Certification </h1>
+    <p>This course was done gradually as I started my bot project over the winter break and only piece by piece took in info that I learned from this module. It introduced me to NPM and Node, which was very important on how to figure out the important tasks. All work was done on Replit.io, to my knowledge is a compiler for almost every popular programming language on a browser. Since a lot of languages are done in software, this may seem as a very accessible method to demonstrating or teaching coding in general. My only complaint from it was that it took a while to compile every time, which is an issue to me personally as it somewhat affects my thought flow. In the future, my goal is to learn even more Advanced Node since it is pretty useful to know. As of right now I have the NPM and Node JS modules complete on this course. My choice to not do any projects is because I made my own project with heavy usage in these concepts. </p>
+    <img src="https://i.imgur.com/mYP9caL.png" </img>
 
-<h2>I linked a channel in which the bot sends daily COVID cases so that you can see how much it increased by globally</h2>
+    <h1 id="bot">My NodeJS Discord Bot Project</h1>
+    <p>I started in the winter break, and finished a lot of the work around the start of January. Basically, the project is an interactive bot on the media platform Discord that manipulates multiple API's to give important information while running on Node JS. The program uses multiple concepts including RegEx, CS6 one line functions, CS6 variables and file imports, data structures and use of objects. I made the bot for my own benefit and for the fun of productivity but once I realized it encompasses a lot of what I learned in ICS4U I decided to include it in my portfolio. Here are some notes about the entirety of it.</p>
 
-<img src="https://i.imgur.com/xzSnWs9.png"></img>
+    <ul>
+      <li>I learned how to make the bot with the FCC API course as well as specified tutorials on Youtube to the discord aspect. I initally hosted the bot on Visual Studio Code but decided to change to a custom hoster to keep it on 24/7. The price of it is about 1 or 2 dollars a month so I intend to keep it on for a while</li>
+      <li>I downloaded NPM dependencies to manipulate multiple APIs to give updated information back. These include: Ottawa Weather API, Hypixel Stats API and COVID-19 stats API. The Discord API does encompass all functions within the program.</li>
+      <li>I had a lot of struggle when coding the bot. My most helpful resources were W3Schools, Khan Academy, FreeCodeCamp, Youtube and StackOverflow. They all collectively helped me realized errors most specifically with RegEx and Data Structures.</li>
+      <li>The bot offers a lot of commands once sent to the server. Below is examples of all screenshots of it working. The bot's name is Kabob Bot because I like kabobs.</li>
+    </ul>
 
-<h2>This is me inputted the custom commands that then fetch data from it's respective API. The Ottawa weather was fairly accurate, skywars showed my updated game stats and covid gave dynamic Covid stats in Canada.</h2>
+    <h2>I linked a channel in which the bot sends daily COVID cases so that you can see how much it increased by globally</h2>
 
-<img src="https://i.imgur.com/pBCMl39.png"></img>
-<h2><a href="https://github.com/MasoudKarimi04/ics4u-summative/blob/main/mybot.js">Here</a> is the link to the source code. It doesn't include the JSON dependencies or the Modules folder so the code wouldn't run, however there is where you can what I coded in. As a student, I can consider this my first side project in which I hope I can learn from in order to create much more in the future. It also was something I entirely learned on my own and in my free time so I appreciate my efforts.</h2>      
-      
+    <img src="https://i.imgur.com/xzSnWs9.png"></img>
+
+    <h2>This is me inputted the custom commands that then fetch data from it's respective API. The Ottawa weather was fairly accurate, skywars showed my updated game stats and covid gave dynamic Covid stats in Canada.</h2>
+
+    <img src="https://i.imgur.com/pBCMl39.png"></img>
+    <h2><a href="https://github.com/MasoudKarimi04/ics4u-summative/blob/main/mybot.js">Here</a> is the link to the source code. It doesn't include the JSON dependencies or the Modules folder so the code wouldn't run, however there is where you can what I coded in. As a student, I can consider this my first side project in which I hope I can learn from in order to create much more in the future. It also was something I entirely learned on my own and in my free time so I appreciate my efforts.</h2>
+
   </div>
 
 </body>
