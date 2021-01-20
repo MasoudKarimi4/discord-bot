@@ -81,3 +81,13 @@ ul {
       left: 50%;
     }
   }
+            .container p {
+                font-size: 22px;
+            }
+            form {
+                font-size: 1.5em;
+            }
+            .scrambled, input, button {
+                
+                font-size: 1.5em;
+            }
