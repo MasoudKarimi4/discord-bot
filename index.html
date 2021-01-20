@@ -61,7 +61,7 @@
     <img src="https://i.imgur.com/3pdsLTR.png"></img>
 
     <h1 id="csp3">Computer Science Pricniples: Simulations</h1>
-    <p>This small module taught brief explanations about abstract systems in coding, including concepts such as programming simulations, what abstract truly means and principles of simulations. In a sense this course is somewhat like a tested way of the Nature of Code module, since they are pretty similar in content. The most impactful part of this module was probably how they explained coding concepts using pseudocode so that you could transfer their ideas into any language. I don't have intentions on completing this module group as this was the only one I found interesting. </p>
+    <p>This small module taught brief explanations about abstract systems in coding, including concepts such as programming simulations, what abstract truly means and principles of simulations. In a sense this course is somewhat like a tested way of the Nature of Code module, since they are pretty similar in content. The most impactful part of this module was probably how they explained coding concepts using pseudocode so that you could transfer their ideas into any language.</p>
 
     <img src="https://i.imgur.com/kH5tDrj.png"></img>
     <h1 id="js">Intro to JavaScript: Drawing & Animation</h1>
@@ -406,13 +406,95 @@
     <h1 id="dom">HTML/JS: Making webpages interactive</h1>
     <p>This module was important since it finally glued a lot of what I've learned so far into one thing, emphasizing how all these components are what make up front-end developement. It showed how to incorporate JavaScript into an HTML document using the Document Object Model, which also is the basis for a lot of JS libraries. In this module, I learned access methods, modifications, animations AND event listeners which I consider the most interesting since it makes use of your keyboard and mouse. If I continue to learn more of web developpement, then I would need to learn the other JS Libraries which mean I already have the basics down with DOMs. As a result, I can consider that the greates impact and will keep DOMs in mind while further integrating JS and HTML. There were also recaps of each language in which I fully completed alongside the course.</p>
 
-    <img src="https://i.imgur.com/Ac96anQ.png"></img>
-
+   
+<img src="https://i.imgur.com/Ac96anQ.png"></img>
     <h1 id="jquery">HTML/JS: Making webpages interactive with jQuery</h1>
 
     <p>This, alongside ProcessingJS were the first libraries that I have learned so far. The jQuery course on Khan Academy allows you to learn about more Document Object Model techniques while using their simplified syntax as compared to what was done with a lot more text. In a sense, it is very related to the previous module since they both do similar tasks, however jQuery makes it much easier to interpret which is what I consider to be very impactful. It is also important to note that jQuery can be the foundation for learning other libraries in JS, so that I can continue to learn more as a CS student as I go further into my personal studies. This module was slightly more obscure on how to get specific things done, which in return incited me to problem solve more effectively which in return was beneficial. Below is a screenshot of my Word Game Project, which is found on my Khan Academy profile.</p>
 
     <img src="https://i.imgur.com/v4py2xM.png"></img>
+    
+      <div class="container-khanacademy">
+      <div class="container-text">
+      </div>
+    <div class='container'>
+        <h1>Word game!</h1>
+        <p>Unscramble these letters to form a word:</p>
+        
+        <form id="jquery-form">
+            <label>
+                <span class='scramble'>REYJUQ</span>
+                <br>
+                <input type="text" size="10" name='answer'>
+            </label>
+            <button type="submit">Check</button>
+        </form>
+        
+        <form id='phantom-form'><label> </label>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var stateOne = false;
+        var stateTwo = false;
+        var win = function() {
+            $('.win').remove();
+            $('.lose').remove();
+            $('<div>')
+                .html('Congratulations, <br>you successfully unscrambled the word!')
+                .addClass('win')
+                .css('padding-top', '23px')
+                .appendTo('#phantom-form');
+                
+            $('.container').css('background-color', 'rgba(86, 206, 227, 0.3)');
+        }
+        
+        var lose = function() {
+            $('.win').remove();
+            $('.lose').remove();
+            $('<div>')
+                .text('Unfortunately, this is not the right word.')
+                .addClass('lose')
+                .css('padding-top', '23px')
+                .appendTo('#phantom-form');
+            $('.container').css('background-color', 'rgba(255, 0, 0, 0.7)');
+        }
+        
+        // When the user submits the first form
+        $('#jquery-form').on('submit', function(event) {
+            event.preventDefault();
+            var $input = $(this).find('[name=answer]');
+            var input = $input.val().toLowerCase();
+            if (input === 'jquery' && (stateOne === false || 'nope')) {
+                stateOne = true;
+                win();
+            } else if (stateOne === false && input != 'jquery'){
+                stateOne = 'nope';
+                lose();
+            }
+        });
+        
+        // When the user submits the second form
+        $('#phantom-form').on('submit', function(event) {
+            event.preventDefault();
+            var $input = $(this).find('[name=answer]');
+            var input = $input.val().toLowerCase();
+            if (input === 'phantom' && (stateTwo === false || 'nope')) {
+                stateTwo = true;
+                win();
+            } else if (stateTwo === false && input != 'jquery') {
+                stateTwo = 'nope';
+                lose();
+            }
+            
+        });
+        
+    </script>
+    </div>     
+<h2>Refresh the site to refresh the jQuery Program.</h2>
+
+
     <h1 id="cube">Algorithms Exploration - Cubing Workflow
     </h1>
     <p>This module is unique in the sense that it isn't necessarily coding, but learning how to solve one can be related back to computer science. Every cube has an algorithm that you have to learn and solve, similar to how there are coding algorithms need to be solved as well. It is crucial to become proficient in those since that is how you become a better coder and land more opportunities in the industry. I managed to learn the easiest cube, the Pyraminx Duo which was a step up from the start of the semester where I didn't know what I was doing. Although it isn't difficult to solve one, it provided me with the steps in order to learn future cubes. The repository included all my speed times, and my project and errors. Below are some screenshots.</p>
