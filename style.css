@@ -54,16 +54,30 @@ ul {
     position: absolute;
     left: 20%;
     border-radius: 50%;
-      background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     animation-name: fade;
     animation-duration: 1s;
     animation-iteration-count: infinite;
   }
-
   @keyframes fade {
     50% {
       left: 90%;
-
+    }
+  }
+  #cubed {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: absolute;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes fade {
+    50% {
+      left: 50%;
     }
   }
