@@ -9,6 +9,7 @@ body {
   position: fixed;
   height: 100%;
   overflow: auto;
+  background: #F8F8F8;
 }
 
 .sidebar a {
@@ -36,7 +37,8 @@ div.content {
 }
 p {
   font-size: 23px;
-  font-family: times-new-roman;
+  font-family: 'Lora', serif;
+  text-align:center;
 }
 ul {
     font-size: 23px;
@@ -47,47 +49,138 @@ ul {
   width:80%
 }
 
-  #ball {
-    width: 70px;
-    height: 70px;
-    margin: 50px auto;
-    position: absolute;
-    left: 20%;
-    border-radius: 50%;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    animation-name: fade;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-  @keyframes fade {
-    50% {
-      left: 90%;
-    }
-  }
-  #cubed {
-    width: 70px;
-    height: 70px;
-    margin: 50px auto;
-    position: absolute;
-    left: 20%;
-    border-radius: 50%;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    animation-name: fade;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-  @keyframes fade {
-    50% {
-      left: 90%;
-    }
-  }
-            .container p {
-                font-size: 22px;
-            }
-            form {
-                font-size: 1.5em;
-            }
-            .scrambled, input, button {
-                
-                font-size: 1.5em;
-            }
+ 
+.container {
+  border:1px ridge black;
+}
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#title{
+  font-size:50px;
+  text-align:center;
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,253,251,1) 50%, rgba(69,113,252,1) 76%, rgba(182,84,234,1) 100%);header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(https://unsplash.imgix.net/uploads%2F14115408840644deb16b0%2F2dc933e3?q=75&fm=jpg&auto=format&s=7f43646e4d26049c6c39890afb2e5ced);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+  header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+}
+#khan{
+  object-position: center;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    margin: 0 auto;
+ text-align: center;
+}
+.content{
+  max-width: 800%;
+  margin: auto;
+}header {
+    text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(https://unsplash.imgix.net/uploads%2F14115408840644deb16b0%2F2dc933e3?q=75&fm=jpg&auto=format&s=7f43646e4d26049c6c39890afb2e5ced);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#jsh{
+      text-align: center;
+    color: #fff;
+    background-attachment: scroll;
+    background-image: url(https://portswigger.net/cms/images/e1/e0/7eac26d04145-article-181102-google-javascript-body-text.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#csph{
+    background-image: url(https://eng-stage.stanford.edu/sites/default/files/styles/full_width_banner_tall/public/chalkboard_web.jpg?itok=1NcgB0xq);
+}
+#hh{
+    background-image: url(https://miro.medium.com/max/12000/0*DxJRTiEy482lV8Rg);
+}
+#sqlh{
+    background-image: url(https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_Data_Types_of_Data_and_How_To_Analyze_Data.jpg);
+}
+#domh{
+    background-image: url(https://www.reachfirst.com/wp-content/uploads/2018/08/Web-Development.jpg);
+}
+#pyh{
+  background-image:url(https://media.wired.com/photos/5e59a85635982c0009f6eb8a/191:100/w_2292,h_1200,c_limit/python-popularity.jpg);
+}
+#vsch{
+  background-image:url(https://i.imgur.com/eS4IxK3.png);
+  
+}
+
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+header .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+h1{
+  text-align:center;
+}
+h2{
+  text-align:center;
+}
+
+iframe{
+  height: 50%;
+  width:39%;
+}
