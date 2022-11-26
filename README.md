@@ -1,11 +1,6 @@
-# ics4u-summative
+# Kabob Bot
 
-This is the Github repository for all files involved with my portfolio, with the emphasis being the code for the website that displays the portfolio. The link is https://masoudkarimi04.github.io/ics4u-summative/
-
-Cubing Module (Not used in portfolio): https://github.com/MasoudKarimi04/cubing-workflow
-
-Creative Coding Session : https://github.com/MasoudKarimi04/flappy-bird-presentation-
+This is the Github repository for the Discord Bot I made in January of 2021 with weather, covid and video game statistics embedded with NPM packages.
 
 
-
-
+![image](https://i.imgur.com/xzSnWs9.png)
