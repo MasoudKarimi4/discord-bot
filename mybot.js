@@ -30,6 +30,7 @@ client.on('ready', () => {
 
 });
 
+// Date
 function leftToEight(){
     var d = new Date();
     return (-d + d.setHours(8,0,0,0));
@@ -40,13 +41,6 @@ function sendMessage(){
     virus.covid('global', (err, res) => {
         if(err) throw err
         console.log(res)
-        /* return 
-          {
-            confirmed: '53,479,378',
-            recovered: '34,519,061',
-            deaths: '1,304,682'
-          }
-        */
            var guild = client.guilds.cache.get('');
     if(guild && guild.channels.cache.get('')){
         guild.channels.cache.get('').send(("```"+"COVID cases for "+today+"\n\n"+res.confirmed+" confirmed cases worldwide.\n"+res.deaths+" confirmed deaths worldwide.```")); }
@@ -61,8 +55,6 @@ client.on('message', (receivedMessage) => {
         processCommand(receivedMessage)
     }
 })
-
-
 
 
 function processCommand(receivedMessage) {
