@@ -4,3 +4,4 @@ This is the Github repository for the Discord Bot I made in January of 2021 with
 
 
 ![image](https://i.imgur.com/xzSnWs9.png)
+![image](https://i.imgur.com/opqEfAy.png)
